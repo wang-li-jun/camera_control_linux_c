@@ -1,0 +1,11 @@
+tar xzvf jpegsrc.v8b.tar.gz
+cd jpeg-8b
+./configure --prefix=/usr/local/jpeg
+make
+make install
+
+cp /usr/local/jpeg/lib/libjpeg.so.9.2.0 /usr/lib64
+ln -s /usr/lib64/libjpeg.so.9.2.0 /usr/lib64/libjpeg.so
+ln -s /usr/lib64/libjpeg.so.9.2.0 /usr/lib64/libjpeg.so.9
+cd /usr/local/jpeg/include/
+cp * /usr/include/
